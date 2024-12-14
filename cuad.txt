@@ -154,3 +154,20 @@ results
 {'exact': 0.0, 'f1': 0.0, 'total': 1, 'HasAns_exact': 0.0, 'HasAns_f1': 0.0, 'HasAns_total': 1, 'best_exact': 0.0, 'best_exact_thresh': 0.0, 'best_f1': 0.0, 'best_f1_thresh': 0.0}
 
 
+
+
+
+
+
+
+
+from evaluate import load
+squad_metric = load("squad")
+predictions = [{'prediction_text': '1976', 'id': '56e10a3be3433e1400422b22'}]
+references = [{'answers': {'answer_start': [97], 'text': ['1976']}, 'id': '56e10a3be3433e1400422b22'}]
+results = squad_metric.compute(predictions=predictions, references=references)
+results
+{'exact_match': 100.0, 'f1': 100.0}
+
+
+
